@@ -33,5 +33,26 @@
         android:id="@+id/btnInRead"
         android:text="읽어요"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSDconver"
+        android:text="SD 카드 내용으로 전환하기"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSDwrite"
+        android:text="SD 카드 저장하기"
+        android:enabled="false"
+        android:visibility="gone"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnIncover"
+        android:text="내부 저장소로 전환하기"
+        android:visibility="gone"/>
+
 
 </LinearLayout>
