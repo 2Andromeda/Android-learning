@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity() {
         val btnparams1 = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         val btn1 = Button(this)
         btn1.text = "그림판으로 넘어가기"
+        val btn2 = Button(this)
+
         lay1.addView(btn1, btnparams1)
         lay1.addView(MyGraphicView(this), btnparams1)
         btn1.setOnClickListener {

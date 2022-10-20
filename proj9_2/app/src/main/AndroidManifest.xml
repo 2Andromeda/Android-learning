@@ -27,9 +27,8 @@
                 android:value="" />
         </activity>
 
-        <activity android:name=".p9_2">
-
-        </activity>
+        <activity android:name=".p9_2"></activity>
+        <activity android:name=".prac9_5"></activity>
     </application>
 
 </manifest>

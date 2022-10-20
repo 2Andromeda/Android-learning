@@ -13,12 +13,16 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class p9_1 extends AppCompatActivity {
 
     final static int LINE = 1, CIRCLE = 2, SQUARE = 3;
     final static int REDc = 1, BLUEc = 2, GREENc =3;
     static int curShape = LINE;
     static int coLor = REDc;
+    static List<MyShape> myshape = new ArrayList<MyShape>();
 
     @Override
     protected  void onCreate(Bundle savedInstanceState){
@@ -29,6 +33,7 @@ public class p9_1 extends AppCompatActivity {
 
     private static class MyGraphicView extends View {
         int startX = -1, startY =-1, stopX = -1, stopY = -1;
+
         public MyGraphicView(Context context){
             super(context);
         }
@@ -40,9 +45,19 @@ public class p9_1 extends AppCompatActivity {
                     startY = (int) event.getY();
                     break;
                 case MotionEvent.ACTION_MOVE:
+                    stopX = (int) event.getX();
+                    stopY = (int) event.getY();
+                    this.invalidate();
+                    break;
                 case MotionEvent.ACTION_UP:
                     stopX = (int) event.getX();
                     stopY = (int) event.getY();
+                    MyShape saveshape = new MyShape();
+                    saveshape.startX = startX; saveshape.startY = startY; saveshape.stopX = stopX; saveshape.stopY = stopY;
+                    saveshape.color_my = coLor; saveshape.shapeTye = curShape;
+
+                    myshape.add(saveshape);
+
                     this.invalidate();
                     break;
             }
@@ -55,7 +70,19 @@ public class p9_1 extends AppCompatActivity {
             paint.setAntiAlias(true);
             paint.setStrokeWidth(5);
             paint.setStyle(Paint.Style.STROKE);
-            switch (coLor){
+
+            if(myshape.size() != 0) {
+                for (MyShape savedShape : myshape) {
+
+                    draw(savedShape.startX, savedShape.startY, savedShape.stopX, savedShape.stopY, paint, canvas, savedShape.color_my, savedShape.shapeTye);
+                }
+            }
+
+            draw(startX, startY, stopX, stopY, paint, canvas, coLor, curShape);
+        }
+
+        protected void draw(int startX, int startY, int stopX, int stopY, Paint paint, Canvas canvas, int color, int curshape){
+            switch (color){
                 case REDc:
                     paint.setColor(Color.RED);
                     break;
@@ -67,7 +94,7 @@ public class p9_1 extends AppCompatActivity {
                     break;
             }
 
-            switch (curShape){
+            switch (curshape){
                 case LINE:
                     canvas.drawLine(startX, startY, stopX, stopY, paint);
                     break;
@@ -77,8 +104,16 @@ public class p9_1 extends AppCompatActivity {
                     break;
                 case SQUARE:
                     canvas.drawRect(startX, startY, stopX, stopY, paint);
+                    break;
             }
         }
+
+    }
+
+    private static class MyShape{
+        int shapeTye;
+        int startX, startY, stopX, stopY;
+        int color_my;
 
     }
 
@@ -115,6 +150,6 @@ public class p9_1 extends AppCompatActivity {
                 coLor = GREENc;
                 return true;
         }
-        return super.onOptionsItemSelected(item);
+        return false;
     }
 }

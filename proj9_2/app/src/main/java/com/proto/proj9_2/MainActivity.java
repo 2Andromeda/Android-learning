@@ -32,15 +32,25 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(lay1, params);
         Button btn = new Button(this);
+        Button btn2 = new Button(this);
 
         btn.setText("실습 9-2");
+        btn2.setText("연습 9-5");
         lay1.addView(btn, params);
+        lay1.addView(btn2, params);
         lay1.addView(new MyGraphicView(this), params);
 //        setContentView(new MyGraphicView(this));
 
         btn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(), p9_2.class);
+                startActivity(intent);
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent intent = new Intent(getApplicationContext(), prac9_5.class);
                 startActivity(intent);
             }
         });
