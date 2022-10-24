@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             voteCount[i] = 0;
 
         ImageView image[] = new ImageView[];
-        Integer imageId[] = 
+        Integer imageId[] =
         Button btnNewWindow = (Button) findViewById(R.id.btnNewWindow);
 
 
