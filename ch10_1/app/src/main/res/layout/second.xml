@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_gravity="center_vertical"
+                android:text="그림 1"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+            <RatingBar
+                android:id="@+id/rbar1"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_gravity="right"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_gravity="center_vertical"
+                android:text="그림 2"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+            <RatingBar
+                android:id="@+id/rbar2"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_gravity="right"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_gravity="center_vertical"
+                android:text="그림 3"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+            <RatingBar
+                android:id="@+id/rbar3"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_gravity="right"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_gravity="center_vertical"
+                android:text="그림 4"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+            <RatingBar
+                android:id="@+id/rbar4"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_gravity="right"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv5"
+                android:layout_gravity="center_vertical"
+                android:text="그림 5"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+            <RatingBar
+                android:id="@+id/rbar5"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_gravity="right"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv6"
+                android:layout_gravity="center_vertical"
+                android:text="그림 6"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+            <RatingBar
+                android:id="@+id/rbar6"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_gravity="right"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv7"
+                android:layout_gravity="center_vertical"
+                android:text="그림 7"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+            <RatingBar
+                android:id="@+id/rbar7"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_gravity="right"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv8"
+                android:layout_gravity="center_vertical"
+                android:text="그림 8"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+            <RatingBar
+                android:id="@+id/rbar8"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_gravity="right"/>
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/btnOriWindow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="648dp"
+        android:text="돌아 가기"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
