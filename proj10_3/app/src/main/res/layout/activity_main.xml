@@ -96,4 +96,10 @@
         android:id="@+id/btnPhoto"
         android:text="사진 찍기"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/endP"
+        android:text="끝내기"/>
+
 </LinearLayout>
