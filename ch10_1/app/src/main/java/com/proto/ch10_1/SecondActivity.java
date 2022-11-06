@@ -2,14 +2,21 @@ package com.proto.ch10_1;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
+
+import java.sql.Time;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class SecondActivity extends Activity {
 
@@ -26,9 +33,11 @@ public class SecondActivity extends Activity {
 
         TextView tv[] = new TextView[9];
         RatingBar rating[] = new RatingBar[9];
+        Integer ratingOrder[] = new Integer[9];
         TextView resultText = (TextView) findViewById(R.id.resultText);
         ImageView resultImage = (ImageView) findViewById(R.id.resultImage);
 
+        ratingOrder[0] = 0;
         int maxId = -1;
         int maxV = -1;
 
@@ -47,7 +56,33 @@ public class SecondActivity extends Activity {
                 maxId = i;
                 maxV = voteResult[i];
             }
+
+            Integer newRO[] = new Integer[j];
+            newRO[0] = 0;
+            int checked = 0;
+            for(int k = 0; k < i; k++){
+                if(voteResult[i] <= voteResult[ratingOrder[k]]){
+                    newRO[k] = ratingOrder[k];
+                }
+                else if(voteResult[i] > voteResult[ratingOrder[k]] && checked == 0){
+                    newRO[k] = i;
+                    newRO[k+1] = ratingOrder[k];
+                    checked = 1;
+                }
+                else{
+                    newRO[k+1] = ratingOrder[k];
+                }
+
+                if(k == (i-1) && checked == 0){
+                    newRO[k+1] = i;
+                }
+            }
+            ratingOrder = newRO;
+
         }
+
+
+
         resultText.setText(imageName[maxId]);
         resultImage.setImageResource(imageFileId[maxId]);
 
@@ -57,5 +92,38 @@ public class SecondActivity extends Activity {
                 finish();
             }
         });
+
+        Button btnNewWindow2 = (Button) findViewById(R.id.btnNewWindow2);
+        btnNewWindow2.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent2 = new Intent(getApplicationContext(), ThirdActivity.class);
+                startActivity(intent2);
+            }
+        });
+
+        Chronometer chrono = (Chronometer) findViewById(R.id.elapsedTime);
+        Button btnAutoStart = (Button) findViewById(R.id.btnAutoStart);
+        Button btnAutoStop = (Button) findViewById(R.id.btnAutoStop);
+        Timer timer = new Time();
+        btnAutoStart.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                TimerTask timerTask = new TimerTask(){
+                    @Override
+                    public void run(){
+
+                    }
+                };
+                timer.schedule(timerTask, 0, 5000);
+            }
+        });
+
+        btnAutoStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                timer.cancel();
+            }
+        });
     }
+
+
 }
