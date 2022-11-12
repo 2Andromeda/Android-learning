@@ -20,6 +20,8 @@ import java.util.TimerTask;
 
 public class SecondActivity extends Activity {
 
+    int order = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -81,8 +83,6 @@ public class SecondActivity extends Activity {
 
         }
 
-
-
         resultText.setText(imageName[maxId]);
         resultImage.setImageResource(imageFileId[maxId]);
 
@@ -101,28 +101,6 @@ public class SecondActivity extends Activity {
             }
         });
 
-        Chronometer chrono = (Chronometer) findViewById(R.id.elapsedTime);
-        Button btnAutoStart = (Button) findViewById(R.id.btnAutoStart);
-        Button btnAutoStop = (Button) findViewById(R.id.btnAutoStop);
-        Timer timer = new Time();
-        btnAutoStart.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                TimerTask timerTask = new TimerTask(){
-                    @Override
-                    public void run(){
-
-                    }
-                };
-                timer.schedule(timerTask, 0, 5000);
-            }
-        });
-
-        btnAutoStop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                timer.cancel();
-            }
-        });
     }
 
 

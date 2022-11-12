@@ -49,5 +49,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button btnNewWindow2 = (Button) findViewById(R.id.btnResult2);
+        btnNewWindow2.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(getApplicationContext(), prac10_6.class);
+                intent.putExtra("VoteCount", voteCount);
+                intent.putExtra("ImageName", imgName);
+                startActivity(intent);
+            }
+        });
     }
 }

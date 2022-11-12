@@ -29,6 +29,7 @@
         <activity
             android:name=".SecondActivity"/>
         <activity android:name=".ThirdActivity"/>
+        <activity android:name=".prac10_6"/>
     </application>
 
 </manifest>

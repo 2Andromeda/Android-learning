@@ -111,5 +111,11 @@
         android:layout_weight="1"
         android:text="투표 종료"
         android:id="@+id/btnResult"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="실습 10-2"
+        android:id="@+id/btnResult2"/>
 
 </LinearLayout>
