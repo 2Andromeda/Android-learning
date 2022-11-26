@@ -14,6 +14,20 @@
         android:textSize="10pt"
         android:id="@+id/btnCh13_1"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="스레드 (ch13_2)"
+        android:textSize="10pt"
+        android:id="@+id/btnCh13_2"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="구글 지도 (Ch 13_3)"
+        android:textSize="10pt"
+        android:id="@+id/btnCh13_3"/>
+
 
 
 </LinearLayout>
