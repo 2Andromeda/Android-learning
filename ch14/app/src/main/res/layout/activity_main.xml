@@ -10,13 +10,13 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ch14_1"
+        android:text="ch14_1, 서비스(백그라운드 서비스)"
         android:id="@+id/ch14_1"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ch14_2"
+        android:text="ch14_2, 브로드캐스트 리시버(안드로이드 신호 수신)"
         android:id="@+id/ch14_2"/>
 
     <Button

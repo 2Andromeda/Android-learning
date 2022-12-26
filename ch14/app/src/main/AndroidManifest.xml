@@ -25,6 +25,18 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        
+        <activity android:name=".ch14_1"/>
+        <activity android:name=".ch14_2"/>
+        <activity android:name=".ch14_3"/>
+        <service android:name=".MusicService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.proto.ch14"/>
+            </intent-filter>
+        </service>
     </application>
+
+    
 
 </manifest>
